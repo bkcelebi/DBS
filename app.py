@@ -22,19 +22,19 @@ def add():
   s='''INSERT INTO students(studentName, email) VALUES('{}','{}');'''.format(name,email)
   cur.execute(s)
   mysql.connection.commit()
+  return '{"Result":"Success"}'
 
 def delete():
   # name = request.args.get('name')
   # email = request.args.get('email')
   id = request.args.get('id')
   cur = mysql.connection.cursor() #create a connection to the SQL instance
-  s='''DELETE FROM students(studentID) WHERE ('{}');'''.format(id)
-  cur.execute(s)
+  s='''DELETE FROM students WHERE ID=?;'''
+  cur.execute(s,id)
   mysql.connection.commit()
-
   return '{"Result":"Success"}'
 
-  
+
 @app.route("/") #Default - Show Data
 def hello(): # Name of the method
   cur = mysql.connection.cursor() #create a connection to the SQL instance
