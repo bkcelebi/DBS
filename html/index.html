@@ -34,7 +34,7 @@
     </table>
 
     <label for='Id'>Type Id number for delete</label><br/>
-    <input type='text'>
+    <input type='text' id="deleteEnt">
 
     <button id="getId" onClick="deleteStudent()">Click Me</button>
 
@@ -43,7 +43,7 @@
       let delButton=document.getElementById('getId');
 
       let deleteStudent = () => {      
-              fetch(baseURL+'delete?id='+delButton.value)
+              fetch(baseURL+'delete?id='+deleteEnt.value)
               .then((resp)=>{alert("Student Deleted");
               }
             );
