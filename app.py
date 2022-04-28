@@ -24,6 +24,7 @@ def add():
   mysql.connection.commit()
   return '{"Result":"Success"}'
 
+@app.route("/delete")
 def delete():
   # name = request.args.get('name')
   # email = request.args.get('email')
