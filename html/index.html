@@ -37,6 +37,7 @@
     <input type='text' id="deleteEnt">
 
     <button onClick="deleteStudent()">Click Me</button>
+    <br><br>
 
     <script>
       let baseURL='https://burak.dbsprojects.ie:8080/';
@@ -48,6 +49,7 @@
             );
           }
     </script>
+
 
     <label for='update'>Type Id number to update</label>
     <input type="text" id="updateID">
@@ -61,7 +63,7 @@
       let baseURL='https://burak.dbsprojects.ie:8080/';
 
       let updateStudent=()=>{
-        fetch(baseURL+'update?id='+updateID.value)
+        fetch(baseURL+'update?id='+updateID.value+'&name='+updateName.value+'&email='+updateEmail.value)
         .then((resp)=> {alert("Student Updates");
         }
       );  
