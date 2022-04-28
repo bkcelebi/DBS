@@ -34,18 +34,22 @@
     </table>
 
     <label for='Id'>Type Id number for delete</label><br/>
-    <input type='submit' id='getId'>
+    <input type='text' id='getId'>
 
     <button onClick="delButton()">Click Me</button>
 
     <script>
+      let baseURL = 'https://burak.dbsprojects.ie:8080/';
       let delButton=document.getElementById('getId');
-      let deleteStudent = () => {
-              let id=document.getElementById('getId').value;
-              fetch(baseURL+'delete?id='+id)
+
+      let deleteStudent = () => {      
+              fetch(baseURL+'delete?id='+document.getElementById('getId').value)
               .then((resp)=>{alert("Student Deleted");
-      }
-      delButton.addEventListener("click", deleteStudent)};
+              }
+            );
+          }
+      delButton.addEventListener("click", deleteStudent);
+
     </script>
 
   </body>
