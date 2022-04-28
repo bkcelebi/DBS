@@ -57,10 +57,9 @@
     <button onClick="updateStudent()"> Click to update </button>
 
     <script>
-      let baseURL='https://burak.dbsprojects.ie:8080/';
       let updateStudent = () => {
         fetch(baseURL+'update?id='+updateID.value+'&name='+updateName.value+'&email='+updateEmail.value)
-        .then((resp) => {alert("Student Updates");}
+        .then((resp) => {alert("Student Updated");}
       );}
     </script>
 
