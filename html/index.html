@@ -39,7 +39,7 @@
     <button onClick="deleteStudent()">Click Me</button>
 
     <script>
-      let baseURL = 'https://burak.dbsprojects.ie:8080/';
+      let baseURL='https://burak.dbsprojects.ie:8080/';
  
       let deleteStudent = () => {      
               fetch(baseURL+'delete?id='+deleteEnt.value)
@@ -47,8 +47,25 @@
               }
             );
           }
-      // delButton.addEventListener("click", deleteStudent);
+    </script>
 
+    <label for='update'>Type Id number to update</label>
+    <input type="text" id="updateID">
+    <label for='update'>Enter a new name</label>
+    <input type="text" id="updateName">
+    <label for='update'>Enter a new email</label>
+    <input type="text" id="updateEmail">
+    <button onClick="updateStudent()"> Click to update </button>
+
+    <script>
+      let baseURL='https://burak.dbsprojects.ie:8080/';
+
+      let updateStudent=()=>{
+        fetch(baseURL+'update?id='+updateID.value)
+        .then((resp)=> {alert("Student Updates");
+        }
+      );  
+    }
     </script>
 
   </body>
