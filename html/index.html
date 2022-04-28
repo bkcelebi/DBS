@@ -41,33 +41,27 @@
 
     <script>
       let baseURL='https://burak.dbsprojects.ie:8080/';
- 
       let deleteStudent = () => {      
-              fetch(baseURL+'delete?id='+deleteEnt.value)
-              .then((resp)=>{alert("Student Deleted");
-              }
-            );
-          }
+        fetch(baseURL+'delete?id='+deleteEnt.value)
+        .then((resp) => {alert("Student Deleted");}
+      );}
     </script>
 
 
-    <label for='update'>Type Id number to update</label>
-    <input type="text" id="updateID">
-    <label for='update'>Enter a new name</label>
-    <input type="text" id="updateName">
-    <label for='update'>Enter a new email</label>
-    <input type="text" id="updateEmail">
+    <label for='updateID'>Type Id number to update</label>
+    <input type="text" name="updateID" id="updateID">
+    <label for='updateName'>Enter a new name</label>
+    <input type="text" name="updateName" id="updateName">
+    <label for='updateEmail'>Enter a new email</label>
+    <input type="text" name="updateEmail" id="updateEmail">
     <button onClick="updateStudent()"> Click to update </button>
 
     <script>
       let baseURL='https://burak.dbsprojects.ie:8080/';
-
-      let updateStudent=()=>{
+      let updateStudent = () => {
         fetch(baseURL+'update?id='+updateID.value+'&name='+updateName.value+'&email='+updateEmail.value)
-        .then((resp)=> {alert("Student Updates");
-        }
-      );  
-    }
+        .then((resp) => {alert("Student Updates");}
+      );}
     </script>
 
   </body>
