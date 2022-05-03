@@ -26,7 +26,6 @@ def add():
 
 @app.route("/delete")
 def delete():
-  raise
   # name = request.args.get('name')
   # email = request.args.get('email')
   id = request.args.get('id')
