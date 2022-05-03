@@ -30,6 +30,7 @@ let loadData = () => {
                     if(data.length > 0){
                         var temp = "";
                         data.forEach((x) => {
+                            alert("Hello")
                             temp += "<tr>";
                             temp += "<td>"+x.ID+"</td>";
                             temp += "<td>"+x.Name+"</td>";
