@@ -1,51 +1,51 @@
 let baseURL='https://burak.dbsprojects.ie:8080/';
 
 
-let doIt=()=>{
-    let tab=document.getElementById("tab1");
-    let rows=tab1.getElementsByTagName('tr');
-    fetch(baseURL)
-      .then(response => response.json())
-      .then(data=>data.Results.forEach(  //.slice(0,3)
-        x=>{
-          let newRow=rows[0].cloneNode(true);
-          let divs=newRow.getElementsByTagName('td');
-          divs[0].innerHTML=x['ID'];
-          divs[1].innerHTML=x['Name'];
-          divs[2].innerHTML=x['Email'];
-          tab1.appendChild(newRow);
-        }
-      )
-    );
-}
-
-window.onload = doIt;
-
-// let loadData = () => {
-//     fetch(baseURL).then(
-//         res => {
-//             res.json().then(
-//                 data => {
-//                     console.log(data);
-//                     if(data.length > 0){
-//                         var temp = "";
-//                         data.forEach((u) => {
-//                             temp += "<tr>";
-//                             temp += "<td>"+u.ID+"</td>";
-//                             temp += "<td>"+u.Name+"</td>";
-//                             temp += "<td>"+u.Email+"</td></tr>";
-//                         })
-                    
-//                         document.getElementById("tableBody").innerHTML = temp;
-                    
-//                     }
-//                 }  
-//             )
+// let doIt=()=>{
+//     let tab=document.getElementById("tab1");
+//     let rows=tab1.getElementsByTagName('tr');
+//     fetch(baseURL)
+//       .then(response => response.json())
+//       .then(data=>data.Results.forEach(  //.slice(0,3)
+//         x=>{
+//           let newRow=rows[0].cloneNode(true);
+//           let divs=newRow.getElementsByTagName('td');
+//           divs[0].innerHTML=x['ID'];
+//           divs[1].innerHTML=x['Name'];
+//           divs[2].innerHTML=x['Email'];
+//           tab1.appendChild(newRow);
 //         }
-//     )
+//       )
+//     );
 // }
 
-// window.onload = loadData;
+// window.onload = doIt;
+
+let loadData = () => {
+    fetch(baseURL).then(
+        res => {
+            res.json().then(
+                data => {
+                    console.log(data);
+                    if(data.length > 0){
+                        var temp = "";
+                        data.forEach((u) => {
+                            temp += "<tr>";
+                            temp += "<td>"+u.ID+"</td>";
+                            temp += "<td>"+u.Name+"</td>";
+                            temp += "<td>"+u.Email+"</td></tr>";
+                        })
+                    
+                        document.getElementById("tableBody").innerHTML = temp;
+                    
+                    }
+                }  
+            )
+        }
+    )
+}
+
+window.onload = loadData;
  
 
 let deleteStudent = () => {   
