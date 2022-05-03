@@ -35,6 +35,8 @@ let loadData = () => {
                             temp += "<td>"+x.Name+"</td>";
                             temp += "<td>"+x.Email+"</td></tr>";
                         })
+
+                        console.log(temp)
                     
                         document.getElementById("tableBody").innerHTML = temp;
                     
