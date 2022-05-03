@@ -52,8 +52,8 @@ let deleteStudent = () => {
     let deleteEntr = document.getElementById('deleteEnt').value;   
     fetch(baseURL+'delete?id='+deleteEntr)
     .then((resp) => {
-        location.reload();
         alert("Student Deleted");
+        location.reload();
     });
 }
 
@@ -63,8 +63,8 @@ let updateStudent = () => {
     let updateEmail = document.getElementById('updateEmail').value;
     fetch(baseURL+'update?id='+updateID+'&name='+updateName+'&email='+updateEmail)
     .then((resp) => {
-        location.reload();
         alert("Student Updated");
+        location.reload();
     });
 }
 
