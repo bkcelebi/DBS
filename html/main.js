@@ -27,9 +27,9 @@ let loadData = () => {
             res.json().then(
                 data => {
                     console.log(data);
-                    if(data.length > 0){
+                    if(data.Results.length > 0){
                         var temp = "";
-                        data.forEach((x) => {
+                        data.Results.forEach((x) => {
                             alert("Hello")
                             temp += "<tr>";
                             temp += "<td>"+x.ID+"</td>";
