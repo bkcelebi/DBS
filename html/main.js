@@ -33,7 +33,8 @@ let loadData = () => {
                             temp += "<tr>";
                             temp += "<td>"+x.ID+"</td>";
                             temp += "<td>"+x.Name+"</td>";
-                            temp += "<td>"+x.Email+"</td></tr>";
+                            temp += "<td>"+x.Email+"</td>";
+                            temp += "<td>"+"<a href='#'> Update </a><br><a href='#'></a>" +"</td></tr>"
                         })
 
                         console.log(temp)
