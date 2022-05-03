@@ -29,11 +29,11 @@ let loadData = () => {
                     console.log(data);
                     if(data.length > 0){
                         var temp = "";
-                        data.forEach((u) => {
+                        data.forEach((x) => {
                             temp += "<tr>";
-                            temp += "<td>"+u.ID+"</td>";
-                            temp += "<td>"+u.Name+"</td>";
-                            temp += "<td>"+u.Email+"</td></tr>";
+                            temp += "<td>"+x.ID+"</td>";
+                            temp += "<td>"+x.Name+"</td>";
+                            temp += "<td>"+x.Email+"</td></tr>";
                         })
                     
                         document.getElementById("tableBody").innerHTML = temp;
