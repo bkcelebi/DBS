@@ -1,67 +1,93 @@
-
 <!DOCTYPE html>
 <html>
+
   <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Test API Client</title>
-    <script>
-    let doIt=()=>{
-      let tab=document.getElementById("tab1");
-      let rows=tab1.getElementsByTagName('tr');
-      fetch('https://burak.dbsprojects.ie:8080/')
-        .then(response => response.json())
-        .then(data=>data.Results.forEach(  //.slice(0,3)
-          x=>{
-            let newRow=rows[0].cloneNode(true);
-            let divs=newRow.getElementsByTagName('td');
-            divs[0].innerHTML=x['ID'];
-            divs[1].innerHTML=x['Name'];
-            divs[2].innerHTML=x['Email'];
-            tab1.appendChild(newRow);
-          }
-        )
-      );
-    }
-    </script>
+    <title>CRUD Exercises</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
   </head>
+
   <body>
-    <button onClick="doIt()">Press me</button>
-    This is where the results turn up: <br/>
 
-    <table id='tab1' bgcolor='white'><br/>
-      <tr><td>ID</td><td>Name</td><td>Email</td></tr>
-    </table>
+    <div class="container">
 
-    <label for='Id'>Type Id number for delete</label><br/>
-    <input type='text' id="deleteEnt">
+      <!-- <table class="table table-stripped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+            
+        </tbody>
+      </table>  -->
 
-    <button onClick="deleteStudent()">Click Me</button>
-    <br><br>
+      <table class="table table-bordered" id='tab1' bgcolor='white'><br/>
+        <tr>
+          <td>ID</td>
+          <td>Name</td>
+          <td>Email</td>
+        </tr>
+      </table>
 
-    <script>
-      let baseURL='https://burak.dbsprojects.ie:8080/';
-      let deleteStudent = () => {      
-        fetch(baseURL+'delete?id='+deleteEnt.value)
-        .then((resp) => {alert("Student Deleted");}
-      );}
-    </script>
+      <form>
 
+        <!-- Add -->
+        <div class="d-flex justify-content-around">
+          <div class="card" style="width: 18rem;">
+            <!-- <img class="card-img-top" alt="adding new person"> -->
+            <i class="card-img-top bi bi-person-plus"></i>
+            <div class="card-body">
+              <div class="form-group card-text"> 
+                <label for="studentId">Enter Student ID</label>
+                <input type="text" class="form-control" id="studentId" name="studentId"><br>
+                <label for="studentName">Enter Student Name</label>
+                <input type="text" class="form-control" id="studentName" name="studentName"><br>
+                <label for="studentMail">Enter Student Mail</label>
+                <input type="email" class="form-control" id="studentMail" name="studentMail"><br>
+                <button class="btn btn-outline-success btn-sm" onClick="addStudent()">Click to Add</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Update -->
+          <div class="card" style="width: 18rem;">
+            <!-- <img class="card-img-top" src="" alt="updating a person"> -->
+            <div class="card-body">
+              <div class="form-group card-text">
+                <label for='updateID'>Type Id number to update</label>
+                <input type="text" name="updateID" class="form-control" id="updateID"><br>
+                <label for='updateName'>Enter a new name</label>
+                <input type="text" name="updateName" class="form-control" id="updateName"><br>
+                <label for='updateEmail'>Enter a new email</label>
+                <input type="text" name="updateEmail" class="form-control" id="updateEmail"><br>
+                <button class="btn btn-outline-warning btn-sm" onClick="updateStudent()"> Click to update </button>
+              </div>
+            </div>
+          </div>
 
-    <label for='updateID'>Type Id number to update</label>
-    <input type="text" name="updateID" id="updateID">
-    <label for='updateName'>Enter a new name</label>
-    <input type="text" name="updateName" id="updateName">
-    <label for='updateEmail'>Enter a new email</label>
-    <input type="text" name="updateEmail" id="updateEmail">
-    <button onClick="updateStudent()"> Click to update </button>
+          <!-- Delete -->
+          <div class="card" style="width: 18rem;">
+            <!-- <img class="card-img-top" src="" alt="deleting a person"> -->
+            <div class="card-body">
+              <div class="form-group card-text">
+                <label for='Id'>Type Id number for delete</label>
+                <input type='text' class="form-control" id="deleteEnt"><br>
+                <button class="btn btn-outline-danger btn-sm" onClick="deleteStudent()">Click to Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </form>
 
-    <script>
-      let updateStudent = () => {
-        fetch(baseURL+'update?id='+updateID.value+'&name='+updateName.value+'&email='+updateEmail.value)
-        .then((resp) => {alert("Student Updated");}
-      );}
-    </script>
+    </div>
 
   </body>
 </html>
