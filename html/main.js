@@ -31,11 +31,12 @@ let loadData = () => {
                         var temp = "";
                         data.Results.forEach((x) => {
                             temp += "<tr>";
-                            temp += "<td>"+x.ID+"</td>";
+                            var id = x.ID
+                            temp += "<td>"+id+"</td>";
                             temp += "<td>"+x.Name+"</td>";
                             temp += "<td>"+x.Email+"</td>";
                             temp += "<td>"+"<span style='margin-right: 10px;' class='btn btn-outline-warning btn-sm'> Update </span>" + 
-                            '<span class= "btn btn-outline-danger btn-sm" onclick=`deleteStudent(${x.ID})`> Delete </span>' +
+                            '<span class= "btn btn-outline-danger btn-sm" onclick=`deleteStudent(${id})`> Delete </span>' +
                             "</td></tr>"
                         })
                     
