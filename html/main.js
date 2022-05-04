@@ -36,7 +36,7 @@ let loadData = () => {
                             temp += "<td>"+x.Email+"</td>";
                             temp += "<td>"+"<span> Update </span>" + 
                             "<span class='btn btn-outline-danger btn-sm' onclick=`deleteStudent('${x.ID}')`> Delete </span>" +
-                            "</td></tr>;"
+                            "</td></tr>"
                         })
                     
                         document.getElementById("tableBody").innerHTML = temp;
