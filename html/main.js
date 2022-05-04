@@ -34,8 +34,8 @@ let loadData = () => {
                             temp += "<td>"+x.ID+"</td>";
                             temp += "<td>"+x.Name+"</td>";
                             temp += "<td>"+x.Email+"</td>";
-                            temp += "<td>"+"<span class='btn btn-outline-warning btn-sm'> Update </span>" + 
-                            "<span class='btn btn-outline-danger btn-sm ms-1' onclick=`deleteStudent('${x.ID}')`> Delete </span>" +
+                            temp += "<td>"+"<span class='btn btn-outline-warning btn-sm'> Update </span><br>" + 
+                            "<span class='btn btn-outline-danger btn-sm' onclick=`deleteStudent('${x.ID}')`> Delete </span>" +
                             "</td></tr>"
                         })
                     
