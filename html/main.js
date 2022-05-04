@@ -34,7 +34,7 @@ let loadData = () => {
                             temp += "<td>"+x.ID+"</td>";
                             temp += "<td>"+x.Name+"</td>";
                             temp += "<td>"+x.Email+"</td>";
-                            temp += "<td>"+"<a href='#' onClick='deleteStudent('')'> Update </a><br><a href='#'> Delete </a>" +"</td></tr>;"
+                            temp += "<td>"+"<a href='#'> Update </a><br><a href='#' onClick=`deleteStudent('${x.ID}')`> Delete </a>" +"</td></tr>;"
                         })
                     
                         document.getElementById("tableBody").innerHTML = temp;
@@ -49,9 +49,18 @@ let loadData = () => {
 window.onload = loadData;
  
 
-let deleteStudent = () => {   
-    let deleteEntr = document.getElementById('deleteEnt').value;   
-    fetch(baseURL+'delete?id='+deleteEntr)
+// let deleteStudent = () => {   
+//     let deleteEntr = document.getElementById('deleteEnt').value;   
+//     fetch(baseURL+'delete?id='+deleteEntr)
+//     .then((resp) => {
+//         alert("Student Deleted");
+//         location.reload();
+//     });
+// }
+
+let deleteStudent = (id) => {   
+    // let deleteEntr = document.getElementById('deleteEnt').value;   
+    fetch(baseURL+'delete?id='+id)
     .then((resp) => {
         alert("Student Deleted");
         location.reload();
