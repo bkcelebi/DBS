@@ -35,9 +35,9 @@ let loadData = () => {
                             temp += "<td>"+x.Name+"</td>";
                             temp += "<td>"+x.Email+"</td>";
                             temp += "<td>"+"<span style='margin-right: 10px;' class='btn btn-outline-warning btn-sm'> Update </span>" + 
-                            "<span class='btn btn-outline-danger btn-sm' onclick='return deleteStudent(${x.ID})'> Delete </span>" +
+                            "<span class='btn btn-outline-danger btn-sm' onclick='deleteStudent('${x.ID}')'> Delete </span>" +
                             "</td></tr>"
-                            // onclick="return deleteStudent("$x.ID")"
+                            // onclick="deleteStudent("$x.ID")"
                         })
                     
                         document.getElementById("tableBody").innerHTML = temp;
